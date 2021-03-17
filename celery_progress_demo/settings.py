@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os
+import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,8 +27,7 @@ SECRET_KEY = '7(15nlwt#9iyvby%&k6e8u%*$)z6)bn!lc)p0kq9wa#303_$#x'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['127.0.0.1','ebayprogress.herokuapp.com/','.herokuapp.com']
 
 # Application definition
 
@@ -119,7 +119,7 @@ USE_L10N = True
 
 USE_TZ = True
 
-
+WSGI_APPLICATION = 'celery_progress_demo.wsgi.application'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 MEDIA_ROOT = os.path.join(BASE_DIR,"media")
@@ -127,3 +127,4 @@ MEDIA_URL = "/media/"
 STATIC_URL = '/static/'
 BROKER_URL = 'redis://localhost:6379'
 CELERY_RESULT_BACKEND = 'redis://localhost:6379'
+django_heroku.settings(locals())
