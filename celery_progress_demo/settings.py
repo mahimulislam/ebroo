@@ -128,6 +128,6 @@ STATIC_URL = '/static/'
 #BROKER_URL = 'redis://localhost:6379'
 BROKER_URL = 'redis://:pa6c40631fe3047169a013e1ff97c7cb34fba24d58c52b36d319ad1cdf7b354ce@ec2-54-166-2-65.compute-1.amazonaws.com:27989'
 #CELERY_RESULT_BACKEND = 'redis://localhost:6379'
-CELERY_RESULT_BACKEND = '    redis://:pa6c40631fe3047169a013e1ff97c7cb34fba24d58c52b36d319ad1cdf7b354ce@ec2-54-166-2-65.compute-1.amazonaws.com:27989'
+CELERY_RESULT_BACKEND = 'redis://:pa6c40631fe3047169a013e1ff97c7cb34fba24d58c52b36d319ad1cdf7b354ce@ec2-54-166-2-65.compute-1.amazonaws.com:27989'
 CELERY_TASK_SERIALIZER=['json']
 django_heroku.settings(locals())
