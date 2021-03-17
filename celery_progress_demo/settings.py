@@ -127,4 +127,5 @@ MEDIA_URL = "/media/"
 STATIC_URL = '/static/'
 BROKER_URL = 'redis://localhost:6379'
 CELERY_RESULT_BACKEND = 'redis://localhost:6379'
+CELERY_TASK_SERIALIZER=['json']
 django_heroku.settings(locals())
