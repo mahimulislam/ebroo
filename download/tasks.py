@@ -11,8 +11,6 @@ content=""
 def ProcessDownload(self, urllist):
 
 	print('Task started')
-	# Create the progress recorder instance
-	# which we'll use to update the web page
 	progress_recorder = ProgressRecorder(self)
 	filename = "%s.csv" % ProcessDownload.request.id
 
@@ -30,12 +28,12 @@ def ProcessDownload(self, urllist):
 				data, flag = gdd(s, 0)
 				write_csv(data, urllist[i], writer)
 				itemind += 1
-				time.sleep(1)
+				time.sleep(.1)
 				progress_recorder.set_progress(i, len(urllist), description="Downloading")
 			except Exception as e:
 				itemind += 1
 				print(e)
-				time.sleep(1)
+				time.sleep(0.1)
 				progress_recorder.set_progress(i, len(urllist), description="Downloading")
 				print("ERROR EIDA")
 	print('End')

@@ -29,7 +29,7 @@ def demo_view(request):
         print(filename)
         # Return demo view with Task ID
         while (True):
-            time.sleep(5)
+            time.sleep(.1)
             state = process.state
             print(state)
             if state == ("SUCCESS"):
