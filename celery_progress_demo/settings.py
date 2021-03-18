@@ -120,11 +120,15 @@ USE_L10N = True
 USE_TZ = True
 
 WSGI_APPLICATION = 'celery_progress_demo.wsgi.application'
+
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 MEDIA_ROOT = os.path.join(BASE_DIR,"media")
 MEDIA_URL = "/media/"
-STATIC_URL = '/static/'
 #BROKER_URL = 'redis://localhost:6379'
 BROKER_URL = 'redis://:pa6c40631fe3047169a013e1ff97c7cb34fba24d58c52b36d319ad1cdf7b354ce@ec2-54-166-2-65.compute-1.amazonaws.com:27989'
 #CELERY_RESULT_BACKEND = 'redis://localhost:6379'
